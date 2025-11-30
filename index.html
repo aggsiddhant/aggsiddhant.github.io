@@ -1,26 +1,1029 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Siddhant Aggarwal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio and personal site of Siddhant Aggarwal — founder, engineer, and polymath building systems across machines, medicine, and mind." />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    :root {
+      --bg-dark: #050816;
+      --bg-darker: #02010a;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --pill-bg: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top left, #111827 0, #020617 50%, #02010a 100%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .navbar-brand {
+      font-family: "Space Grotesk", system-ui;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted) !important;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--accent) !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      padding-top: 80px;
     }
-    h1 { font-size: 3rem; }
-    p { opacity: 0.7; }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: "Space Grotesk", system-ui;
+      font-size: clamp(2.8rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      max-width: 540px;
+      font-size: 0.98rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      border: none;
+      color: #0b0f19;
+      font-weight: 600;
+      padding-inline: 1.6rem;
+    }
+
+    .btn-accent:hover {
+      filter: brightness(1.05);
+      color: #020617;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #111827, #020617);
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      max-width: 360px;
+      margin-left: auto;
+    }
+
+    .hero-card h6 {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    /* SECTIONS */
+    section {
+      padding-block: 5rem;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", system-ui;
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 620px;
+      font-size: 0.96rem;
+    }
+
+    .section-header {
+      margin-bottom: 2.25rem;
+    }
+
+    /* CARDS */
+    .card-custom {
+      height: 100%;
+      background: radial-gradient(circle at top left, #020617, #000);
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-custom::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top left,
+        rgba(249, 115, 22, 0.14),
+        transparent 55%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .card-custom:hover::before {
+      opacity: 1;
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.7);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .pill-small {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.15rem 0.55rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* LISTS */
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* NOW SECTION */
+    .now-item-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .now-item-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-block: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #020617;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
-  <div>
-    <h1>Siddhant Aggarwal</h1>
-    <p>Builder · Engineer · Founder</p>
-  </div>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-light" href="#top">
+        SA • BUILDER
+      </a>
+      <button
+        class="navbar-toggler text-light border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#build-queue">Build&nbsp;Queue</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#writing">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#now">Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-kicker">Siddhant Aggarwal</div>
+          <h1 class="hero-title">Founder by compulsion, not by trend.</h1>
+          <p class="hero-tagline">
+            Engineering ideas into existence &mdash; from machines and manufacturing
+            to medicine and mind.
+          </p>
+          <p class="hero-sub">
+            I design and build systems that touch the real world: CNC machines,
+            solar boilers, herbal extraction setups, biogas experiments, and
+            learning environments. Less pitch deck, more working hardware.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">Founder</div>
+            <div class="pill">Engineer</div>
+            <div class="pill">Physics &amp; Psychology</div>
+            <div class="pill">Manufacturing &amp; Ayurveda</div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#projects" class="btn btn-accent rounded-pill">
+              View selected projects
+            </a>
+            <a href="#writing" class="btn btn-ghost rounded-pill">
+              Read / watch what I’m thinking about
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card">
+            <h6 class="mb-2">Snapshot</h6>
+            <p class="mb-2">
+              Physics postgrad, MBA at IIT Delhi in progress, MA Psychology in
+              parallel. Lead & Promoter at Kairos Bansal Pvt. Ltd., building
+              machines and processes for fabrication, textiles, and food-grade
+              production.
+            </p>
+            <p class="mb-2">
+              MD R&amp;D at Shri Krishna Ayur Siddhi, where I built custom
+              extraction, drying, and weighing systems to cut costs and improve
+              yield using classical Ayurveda as the base.
+            </p>
+            <p class="mb-0">
+              Volunteer coordinator at Siddhi Vinayak CNK Trust, running health
+              camps and education programs that actually reach people, not just
+              reports.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Polymath in progress.</h2>
+        <p class="section-subtitle">
+          I’m a happy jack-of-all-trades moving between physics, psychology,
+          machines, software, and medicine. The goal isn’t to collect labels.
+          It’s to build things that make life less stupid and more sustainable.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <p>
+            I like working where disciplines collide: a CNC machine that shapes
+            steel, a solar boiler that cuts energy use by orders of magnitude,
+            a vacuum dryer that makes herbal extraction actually affordable,
+            a website that makes classical Ayurveda accessible, a counseling
+            session that nudges someone onto a better path.
+          </p>
+          <p>
+            I believe in protecting the earth and the messy biodiversity we
+            haven’t fully understood yet. “Growth” that burns through people
+            and ecosystems doesn’t impress me. Neither do performative
+            “impact” narratives or cosmetic sustainability.
+          </p>
+          <p>
+            I have a low tolerance for fakeness, buzzword-stacked decks, and
+            the idea that a LinkedIn headline is the same thing as real work.
+            I’d rather show you a working prototype, a line balanced on a real
+            shop floor, or a patient feeling better on a classical formulation.
+          </p>
+          <p>
+            This site is where I document what I’m building, what I’m learning,
+            what breaks along the way, and how all of this connects back to
+            being a halfway decent human in a very weird century.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card-custom mb-3">
+            <div class="card-label">
+              <span class="dot"></span> Current tracks
+            </div>
+            <div class="card-text">
+              <ul class="bullet-list">
+                <li>MBA, Department of Management Studies, IIT Delhi.</li>
+                <li>MA Psychology (counseling &amp; human behaviour), IGNOU.</li>
+                <li>BS-MS in Physics (with Data Science minor), IISER Bhopal.</li>
+                <li>Founder / Lead at Kairos Bansal Pvt. Ltd. and
+                    MD R&amp;D at Shri Krishna Ayur Siddhi.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> A few principles
+            </div>
+            <ul class="bullet-list mt-2">
+              <li>Build in the real world, not just in slides.</li>
+              <li>Protect nature while still playing with big machines.</li>
+              <li>Respect old knowledge, but test everything.</li>
+              <li>Stay honest, even when it’s inconvenient.</li>
+              <li>Make things that outlast trends and hype cycles.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / PORTFOLIO -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Projects</div>
+        <h2 class="section-title">Selected things I’ve built or led.</h2>
+        <p class="section-subtitle">
+          A mix of hardware, processes, and platforms across fabrication, herbal
+          extraction, energy, and community work.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- CNC & MACHINE DEVELOPMENT -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Hardware &amp; Manufacturing
+            </div>
+            <h3 class="card-title">CNC &amp; Machine Development</h3>
+            <div class="card-meta">Project Lead &mdash; Kairos Bansal Pvt. Ltd.</div>
+            <p class="card-text">
+              Directed in-house development of plasma cutters, CO₂ CNC setups,
+              a metal 3D printer, and 5-axis milling systems. Focused on
+              designing machines that are affordable enough for small shops
+              while still precise and reliable.
+            </p>
+            <p class="card-text mb-2">
+              Reduced fabrication costs by ~50% and increased operational
+              efficiency by ~35% through custom frames, motion systems, and
+              control architecture tuned to real use, not catalog specs.
+            </p>
+            <div>
+              <span class="pill-small">CNC</span>
+              <span class="pill-small">Automation</span>
+              <span class="pill-small">Cost Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOLAR BOILER -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Energy &amp; Thermal Systems
+            </div>
+            <h3 class="card-title">Solar Boiler for Process Heat</h3>
+            <div class="card-meta">Design Lead &mdash; R&amp;D</div>
+            <p class="card-text">
+              Engineered a custom solar concentrator and thermal system aimed at
+              replacing conventional boilers for low-to-medium temperature
+              industrial processes.
+            </p>
+            <p class="card-text mb-2">
+              Achieved up to ~99% savings in direct energy usage for targeted
+              applications and designed it to be manufacturable and deployable
+              at small industrial scale, not just lab-demonstration level.
+            </p>
+            <div>
+              <span class="pill-small">Solar</span>
+              <span class="pill-small">Thermal Design</span>
+              <span class="pill-small">Sustainability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CELLULOSE TO BIOGAS & SUGAR -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Circular Systems
+            </div>
+            <h3 class="card-title">Cellulose Waste → Biogas &amp; Sugar</h3>
+            <div class="card-meta">R&amp;D Lead</div>
+            <p class="card-text">
+              Built a pilot process to convert ~100 kg/month of cellulose-rich
+              waste into fermentable sugars and biogas, cutting disposal costs
+              while recovering usable energy and materials.
+            </p>
+            <p class="card-text mb-2">
+              Established in-house cellulase production, reduced disposal costs
+              by essentially 100% for that stream, and trimmed fuel needs by
+              around 5% while opening new value-add pathways.
+            </p>
+            <div>
+              <span class="pill-small">Bioprocess</span>
+              <span class="pill-small">Waste-to-Value</span>
+              <span class="pill-small">Energy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERBAL EXTRACTION & VACUUM DRYING -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Herbal Extraction
+            </div>
+            <h3 class="card-title">Vacuum Dryers &amp; Extraction Systems</h3>
+            <div class="card-meta">MD R&amp;D &mdash; Shri Krishna Ayur Siddhi</div>
+            <p class="card-text">
+              Designed and built high-efficiency extraction and drying
+              equipment: custom electric kettles, granulators, mortars,
+              stirrers, and vacuum dryers tuned for herbal formulations.
+            </p>
+            <p class="card-text mb-2">
+              Cut drying costs by ~60%, reduced solvent loss by ~50%, and
+              increased extraction yields by ~12%, translating to ~15% lower
+              processing cost using variations of the Soxhlet method.
+            </p>
+            <div>
+              <span class="pill-small">Ayurveda</span>
+              <span class="pill-small">Process Design</span>
+              <span class="pill-small">Cost Reduction</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEIGHING / LOW-COST INSTRUMENTATION -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Instrumentation
+            </div>
+            <h3 class="card-title">Low-Cost Weighing &amp; Handling Systems</h3>
+            <div class="card-meta">R&amp;D &amp; Implementation</div>
+            <p class="card-text">
+              Built custom weighing systems and material-handling solutions,
+              including in-house forklifts tailored to cramped, real-world
+              spaces instead of catalog layouts.
+            </p>
+            <p class="card-text mb-2">
+              Achieved ~91% savings versus market equipment by building
+              weighing systems at ~9% of standard cost, while maintaining
+              accuracy and reliability for daily operations.
+            </p>
+            <div>
+              <span class="pill-small">Instrumentation</span>
+              <span class="pill-small">Mechanical Design</span>
+              <span class="pill-small">Frugality</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AYUR SIDHI PLATFORM -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Digital &amp; Product
+            </div>
+            <h3 class="card-title">Ayur Siddhi &mdash; Consultation + E-Commerce</h3>
+            <div class="card-meta">Platform Development Lead &mdash; www.ayursidhi.com</div>
+            <p class="card-text">
+              Designed and developed an online platform for Ayurvedic
+              consultation and e-commerce, focused on classical formulations
+              for modern conditions rather than generic wellness.
+            </p>
+            <p class="card-text mb-2">
+              Led advertising and outreach, cutting customer acquisition cost
+              by ~25% while aligning the brand with evidence-informed,
+              text-grounded Ayurveda.
+            </p>
+            <div>
+              <span class="pill-small">Product</span>
+              <span class="pill-small">Web</span>
+              <span class="pill-small">Health</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-muted" style="font-size: 0.85rem;">
+          This is a small sample. If you want the full story, ask for my CV or
+          come visit the workshop.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD QUEUE -->
+  <section id="build-queue">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Build Queue</div>
+        <h2 class="section-title">Things I’m actively scheming on.</h2>
+        <p class="section-subtitle">
+          Not a roadmap. Just a list of machines, systems, and experiments that
+          are somewhere between “half-designed” and “half-built”.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Fabrication
+            </div>
+            <h3 class="card-title">CNC Plasma &amp; Universal CNC Shop</h3>
+            <p class="card-text">
+              A self-hosted fabrication stack for metal, wood, and possibly
+              stone: CNC plasma, 3-axis and 5-axis milling, and motion systems
+              that can be reconfigured instead of replaced.
+            </p>
+            <ul class="bullet-list mt-2">
+              <li>Offer cutting as a service + build my own machines.</li>
+              <li>Open up precision fabrication to small operators.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Processing &amp; Pharma-Tech
+            </div>
+            <h3 class="card-title">Vacuum Dryer v2 &amp; Softgel Prototype</h3>
+            <p class="card-text">
+              Next-gen vacuum drying system with better energy balance, plus a
+              small-scale softgel machine for high-quality herbal formulations.
+            </p>
+            <ul class="bullet-list mt-2">
+              <li>Target lower energy per kg of dry extract.</li>
+              <li>Build more control into dosage forms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Motion &amp; Control
+            </div>
+            <h3 class="card-title">Custom Linear Motor &amp; Gearboxes</h3>
+            <p class="card-text">
+              Designing permanent magnet linear motors and planetary gearboxes
+              to replace off-the-shelf units with systems tuned to specific
+              loads, speeds, and budgets.
+            </p>
+            <ul class="bullet-list mt-2">
+              <li>Explore alternative motion systems for CNC and process lines.</li>
+              <li>Push towards more efficient and maintainable hardware.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-muted mt-4" style="font-size: 0.86rem;">
+        If it’s on this list, I’m either already prototyping it or fighting with
+        some part of the design.
+      </p>
+    </div>
+  </section>
+
+  <!-- WRITING & EXPERIMENTS -->
+  <section id="writing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Writing &amp; Experiments</div>
+        <h2 class="section-title">A brain dump, not a content strategy.</h2>
+        <p class="section-subtitle">
+          Notes on books, films, anime, machines, psychology, Ayurveda, systems,
+          and whatever else is currently messing with my mental model of the
+          world.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Field Notes
+            </div>
+            <h3 class="card-title">What I Learned from Breaking My Own Machines</h3>
+            <p class="card-text">
+              A running log of failures while building CNCs, dryers, and other
+              contraptions &mdash; and why I trust scratched metal and blown
+              fuses more than polished pitch decks.
+            </p>
+            <p class="card-text mt-2" style="font-size: 0.85rem; color: var(--text-muted);">
+              Coming soon as I document builds, mishaps, and fixes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Stories &amp; Screens
+            </div>
+            <h3 class="card-title">Why Some Stories Stay and Others Don’t</h3>
+            <p class="card-text">
+              Notes on books, movies, and anime that actually changed how I
+              think about agency, systems, and courage &mdash; and why some
+              “inspirational” content leaves me completely cold.
+            </p>
+            <p class="card-text mt-2" style="font-size: 0.85rem; color: var(--text-muted);">
+              Expect spoilers, over-analysis, and probably a lot of underlined quotes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Body, Plants &amp; Planet
+            </div>
+            <h3 class="card-title">Modern Problems, Old Texts</h3>
+            <p class="card-text">
+              Reflections from applying classical Ayurvedic formulations to
+              modern lifestyle issues: what works, what doesn’t, and how to
+              respect old knowledge without romanticizing it.
+            </p>
+            <p class="card-text mt-2" style="font-size: 0.85rem; color: var(--text-muted);">
+              Will evolve as I write more case notes and long-form thoughts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-muted mt-4" style="font-size: 0.86rem;">
+        I’ll add actual posts and links here as I publish them. For now, treat this
+        as a map of the territory I care about.
+      </p>
+    </div>
+  </section>
+
+  <!-- NOW: READING / WATCHING / THINKING -->
+  <section id="now">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Now</div>
+        <h2 class="section-title">What I’m currently feeding my brain.</h2>
+        <p class="section-subtitle">
+          Not a definitive list, just a snapshot. This section will age and be
+          updated whenever I remember to.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Reading
+            </div>
+            <div class="now-item">
+              <div class="now-item-title">Book slot #1</div>
+              <div class="now-item-meta">Replace this with whatever you’re actually reading.</div>
+            </div>
+            <hr class="border-secondary border-opacity-50 my-3" />
+            <div class="now-item">
+              <div class="now-item-title">Book slot #2</div>
+              <div class="now-item-meta">Use this space for a second book or article series.</div>
+            </div>
+            <p class="card-text mt-3" style="font-size: 0.85rem;">
+              This section is meant to be edited by me, not kept perfectly up to date
+              for the internet. It’s a reminder to myself of what I claimed to care
+              about.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Watching
+            </div>
+            <div class="now-item">
+              <div class="now-item-title">Series / Anime slot</div>
+              <div class="now-item-meta">Drop in the show that’s currently renting space in my head.</div>
+            </div>
+            <hr class="border-secondary border-opacity-50 my-3" />
+            <div class="now-item">
+              <div class="now-item-title">Film slot</div>
+              <div class="now-item-meta">For movies I’m rewatching or obsessively recommending.</div>
+            </div>
+            <p class="card-text mt-3" style="font-size: 0.85rem;">
+              I care less about “content consumption” and more about the few
+              stories that permanently change how I interpret reality.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Thinking About
+            </div>
+            <ul class="bullet-list mt-1">
+              <li>How to make serious hardware financially viable in small batches.</li>
+              <li>Where psychology, systems thinking, and spirituality actually intersect.</li>
+              <li>What “sustainable” really means beyond nice packaging and ESG slides.</li>
+              <li>How to design work that doesn’t require people to burn out to be useful.</li>
+            </ul>
+            <p class="card-text mt-3" style="font-size: 0.85rem;">
+              If any of this overlaps with what you’re obsessing over, feel free to
+              write to me about it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">Say hi, but be specific.</h2>
+        <p class="section-subtitle">
+          I’m open to conversations around machines, manufacturing, Ayurveda,
+          psychology, community work, and projects that touch the real world.
+          Vague “collabs” and spam will be ignored.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Email
+            </div>
+            <p class="card-text mb-2">
+              The best way to reach me is:
+            </p>
+            <p class="card-text mb-3">
+              <a href="mailto:aggsiddhant@gmail.com" class="link-light">
+                aggsiddhant@gmail.com
+              </a>
+            </p>
+            <p class="card-text" style="font-size: 0.9rem;">
+              If you’re writing, it helps to include:
+            </p>
+            <ul class="bullet-list">
+              <li>Who you are and what you actually do.</li>
+              <li>What you’re interested in building or discussing.</li>
+              <li>Why you think I’m a good person to talk to about it.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-custom">
+            <div class="card-label">
+              <span class="dot"></span> Elsewhere on the internet
+            </div>
+            <p class="card-text mb-3">
+              I don’t live on social media, but you can find traces of my work here:
+            </p>
+            <ul class="bullet-list">
+              <li>
+                <strong>LinkedIn:</strong>
+                <a
+                  href="https://www.linkedin.com/in/siddhant-aggarwal-kbpl"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-light"
+                  >linkedin.com/in/siddhant-aggarwal-kbpl</a
+                >
+              </li>
+              <li>
+                <strong>GitHub:</strong>
+                <a
+                  href="https://github.com/aggsiddhant"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-light"
+                  >github.com/aggsiddhant</a
+                >
+              </li>
+              <li>
+                <strong>Ayur Siddhi:</strong>
+                <a
+                  href="https://www.ayursidhi.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-light"
+                  >www.ayursidhi.com</a
+                >
+              </li>
+            </ul>
+            <p class="card-text mt-3" style="font-size: 0.85rem;">
+              If you found this site because of a machine, a paper, or a project
+              we have in common, feel free to mention that in your message.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>© <span id="year"></span> Siddhant Aggarwal. All rights reserved.</div>
+      <div>
+        Built on static HTML, a little CSS, and GitHub Pages. No tracking, no pop-ups.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
